@@ -1,0 +1,119 @@
+.icon {
+	height: 50px;
+}
+.brand {
+	font-size: 80px;
+}
+.brandSub {
+	font-size: 30px;
+	padding: 10px 10px;
+}
+.descriptionSub {
+	font-size: 16px;
+	padding: 25px;
+	word-wrap: break-word;
+}
+.descriptionImage {
+	padding: 50px;
+	height: 100%;
+	width: 100%;
+}
+@media screen and (max-width: 700px) {
+	.descriptionSub {
+		font-size: 14px;
+		padding: 10px;
+		word-wrap: break-word;
+	}
+	.descriptionImage {
+		padding: 0px;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.divBlackBox {
+	margin: 50px;
+	color: var(--white);
+	padding: 25px;
+	background-color: #333;
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px 8px rgb(34, 33, 33);
+}
+
+.divWhiteBox {
+	background-color: var(--white);
+	color: var(--darkcolor);
+	padding: 10px;
+	border-radius: 10px;
+	margin: 50px;
+}
+
+.divTransBox {
+	background-color: rgba(255, 255, 255, 0.3);
+	color: var(--color1);
+	padding: 30px;
+	border-radius: 10px;
+	margin: 50px;
+}
+
+.modelImage {
+	width: 100%;
+	height: 100%;
+	border-radius: 5%;
+	padding-top: 10px;
+}
+.model3Image {
+	/* width: 100%; */
+	height: 100%;
+	border-radius: 5%;
+	padding-top: 10px;
+}
+
+@media screen and (max-width: 700px) {
+	.brand {
+		font-size: 35px;
+		padding: 5px;
+	}
+	.brand-sub {
+		font-size: 15px;
+		padding-bottom: 5px;
+	}
+	.divBlackBox {
+		margin: 10px;
+		font-size: 14px;
+		padding: 5px;
+		border-radius: 5px;
+		box-shadow: 0px 0px 5px 8px rgb(34, 33, 33);
+	}
+
+	.divWhiteBox {
+		background-color: var(--white);
+		color: var(--darkcolor);
+		padding: 10px;
+		border-radius: 10px;
+		margin-top: 10px;
+	}
+
+	.divTransBox {
+		background-color: rgba(255, 255, 255, 0.3);
+		color: var(--color1);
+		padding: 10px;
+		border-radius: 10px;
+		margin: 10px;
+	}
+
+	.modelImage {
+		width: 100%;
+		height: inherit;
+		border-radius: 5%;
+		padding-top: 10px;
+	}
+
+	.footer {
+		font-size: 14px;
+	}
+}
+
+.detail {
+	color: var(--color3);
+}

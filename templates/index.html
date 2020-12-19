@@ -1,0 +1,727 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Template</title>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0 shrink-to-fit=no"
+		/>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+		<meta content="utf-8" http-equiv="encoding" />
+		<link rel="shortcut icon" href="" type="image/x-icon" />
+
+		<!-- Jquery -->
+		<script
+			type="text/javascript"
+			src="{% static 'jquery/jquery.min.js' %}"
+		></script>
+
+		<!-- Bootstrap -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+		/>
+		<script
+			type="text/javascript"
+			src="{% static 'bootstrap/js/bootstrap.min.js' %}"
+		></script>
+
+		<!-- FontAwesome -->
+		<!-- <link href="{% static 'fontawesome/css/all.css' %}" rel="stylesheet" />
+		<script defer src="{% static 'fontawesome/js/all.js' %}"></script> -->
+
+		<!-- Axios -->
+		<script
+			type="text/javascript"
+			src="{% static 'axios/axios.min.js' %}"
+		></script>
+
+		<!-- Personalized Includes -->
+		<!-- CSS -->
+
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{% static 'css/template.css' %}"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{% static 'css/elements.css' %}"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{% static 'css/index.css' %}"
+		/>
+		<!-- Javascript -->
+		<script type="text/javascript" src="{% static 'js/elements.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/template.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+	</head>
+
+	<body class="body">
+		<div class="row loaderDiv" id="loaderDiv">
+			<div class="loader"></div>
+		</div>
+		<div class="modal font4" id="main-modal">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content">
+					<!-- Modal Header -->
+					<div class="modal-header" id="modal-header">
+						<h4 class="modal-title" id="modal-title">Modal Heading</h4>
+
+						<button type="button" class="close" onclick="alertClose()">
+							&times;
+						</button>
+					</div>
+
+					<!-- Modal body -->
+					<div class="modal-body" id="modal-body">Body</div>
+
+					<!-- Modal footer -->
+					<!-- <div class="modal-footer" id="modal-footer">
+						Footer
+						<button type="button" class="btn btn-danger" data-dismiss="modal">
+							Close
+						</button>
+					</div> -->
+				</div>
+			</div>
+			<!-- <button
+			type="button"
+			class="btn btn-primary"
+			data-toggle="modal"
+			data-target="#main-modal"
+			onclick=""
+		>
+			Open modal
+		</button> -->
+		</div>
+
+		<section id="header">
+			<div class="row">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-5">
+					<div class="row">
+						<div class="col-sm-12 font1 base2 center">
+							<img class="icon" src="{% static 'images/icon2.png' %}" />
+							<span>&nbsp;&nbsp;&nbsp;AdverShield</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="col-sm-12" id="modelProgress"></div>
+			</div> -->
+		</section>
+		<section id="introduction">
+			<div class="row">
+				<div class="col-sm-8 center base1 pt-5 font2">
+					We, at AdverShield, study the behavior demonstrated by different
+					machine learning models when they are under attack from<br />
+					<span class="highlight1">Adversarial Agents</span><br />
+					Adversarial machine learning is a machine learning technique that
+					attempts to fool models by supplying deceptive input.The most common
+					reason is to cause a malfunction in a machine learning model. Most
+					machine learning techniques were designed to work on specific problem
+					sets in which the training and test data are generated from the same
+					statistical distribution (IID). When those models are applied to the
+					real world, adversaries may supply data that violates that statistical
+					assumption. This data may be arranged to exploit specific
+					vulnerabilities and compromise the results.
+					<br />
+					<span class="highlight2">
+						This project is a part of a study conducted by a team of students
+						from Jaypee Institute of Information Technology.
+						<a href="#footer">See more.</a>
+					</span>
+				</div>
+			</div>
+		</section>
+		<section id="models">
+			<div class="divTransBox font4">
+				<div class="row">
+					<div class="col-sm-12 brandSub">Model 1: FGSM Attack</div>
+				</div>
+				<div class="row center">
+					<div class="col-sm-5 descriptionSub font2">
+						<div class="row center base2">Description</div>
+						<div class="row text-justify">
+							<p>
+								One of the first and most popular adversarial attacks to date is
+								referred to as the Fast Gradient Sign Attack (FGSM) and is
+								described by Goodfellow et. al. in Explaining and Harnessing
+								Adversarial Examples. The attack is remarkably powerful, and yet
+								intuitive. It is designed to attack neural networks by
+								leveraging the way they learn, gradients. The idea is simple,
+								rather than working to minimize the loss by adjusting the
+								weights based on the backpropagated gradients, the attack
+								adjusts the input data to maximize the loss based on the same
+								backpropagated gradients.
+							</p>
+							<br />
+							<p>
+								From the figure, x is the original input image correctly
+								classified as a “panda”, y is the ground truth label for x, θ
+								represents the model parameters, and J(θ,x,y) is the loss that
+								is used to train the network. The attack backpropagates the
+								gradient back to the input data to calculate ∇xJ(θ,x,y). Then,
+								it adjusts the input data by a small step (ϵ or 0.007 in the
+								picture) in the direction (i.e. sign(∇xJ(θ,x,y))) that will
+								maximize the loss. The resulting perturbed image, x′, is then
+								misclassified by the target network as a “gibbon” when it is
+								still clearly a “panda”.
+							</p>
+							<ul>
+								<li>Model Used: <span class="base2">ResNet18</span></li>
+								<li>Dataset: <span class="base2">ImageNet</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<img
+							src='{% static "images/fgsmattack/base.png" %}'
+							class="descriptionImage"
+						/>
+					</div>
+				</div>
+				<div class="row center pt-4">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-3">
+								<label for="model1Select">Select an image:</label>
+							</div>
+							<div class="col-sm-9">
+								<select
+									class="form-control"
+									id="model1Select"
+									onchange="fetchFGSMExample()"
+								>
+									<option value="None"></option>
+									<option value="bear.jpg">Bear</option>
+									<option value="bird1.jpg">Jacamar</option>
+									<option value="blackrhino.jpg">Black Rhino</option>
+									<option value="bmwcar.jpg">BMW Car</option>
+									<option value="chevroletcar.jpg">Chevrolet Car</option>
+									<option value="cobra.jpg">Indian Cobra</option>
+									<option value="dog.jpg">Dog</option>
+									<option value="elephant.jpg">Indian Elephant</option>
+									<option value="elephant2.jpg">African Elephant</option>
+									<option value="goldfish.jpg">Goldfish</option>
+									<option value="house.jpg">House</option>
+									<option value="house2.jpg">Bungalow</option>
+									<option value="lebanonsnake.jpg">Lebanon Snake</option>
+									<option value="lion1.jpg">Lion</option>
+									<option value="lion2.jpg">Lion cub</option>
+									<option value="panda.jpg">Panda</option>
+									<option value="panda2.jpg">Panda 2</option>
+									<option value="panda3.jpg">Panda 3</option>
+									<option value="parrot.jpg">Parrot</option>
+									<option value="stopsign.jpg">Stop Sign</option>
+									<option value="stopsign2.jpg">Stop Sign 2</option>
+									<option value="whitebear.jpg">Polar Bear</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4 center">
+						<div class="divTransBox">
+							Image
+							<img class="modelImage" src="" id="model1Image" />
+						</div>
+					</div>
+					<div class="col-sm-4 pt-5">
+						<div class="row center">
+							Select perturbation amount (%): &nbsp
+
+							<br />
+							<div class="col-sm-12">
+								<input
+									type="range"
+									min="1"
+									max="100"
+									value="10"
+									class="slider"
+									id="model1Slider"
+									oninput="showSliderValue(1)"
+								/>
+							</div>
+							<div class="base2" id="model1ShowValue">0</div>
+						</div>
+						<div class="row center pt-5">
+							<button class="btn btn-success" onclick="fetchFGSMResults()">
+								Fetch
+							</button>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="divWhiteBox">
+							<div class="row center">Results:</div>
+							<div class="row center" id="model1Results"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4 center">
+						<div class="divTransBox">
+							Perturbation Added
+							<img class="modelImage" src="" id="model1Perturbation" />
+						</div>
+					</div>
+					<div class="col-sm-4 center">
+						<div class="divTransBox">
+							Adversarial Image Generated
+							<img class="modelImage" src="" id="model1Adversarial" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="divTransBox font4">
+				<div class="row">
+					<div class="col-sm-12 brandSub">Model 2: One Pixel Attack</div>
+				</div>
+				<div class="row center">
+					<div class="col-sm-5 descriptionSub font2">
+						<div class="row center base2">Description</div>
+						<div class="row text-justify">
+							<p>
+								According to research done by Jiawei et al, it turns out only
+								one pixel is enough to achieve this for a lot of Deep Neural
+								nets. Some images generated using this method and their
+								predicted classes are shown alongside:
+							</p>
+							<br />
+
+							The main features that make this attack unique are :
+							<ul>
+								<li>
+									Effectiveness-It causes most classifiers to wrongly classify
+									with high accuracy.
+								</li>
+								<li>
+									Limited information-This method only needs access to the
+									confidence values of the different labels given by the Neural
+									Net(often called a semi-black box attack).
+								</li>
+								<li>
+									Flexibility-Different variants of Neural Nets gets fooled by
+									this method.
+								</li>
+							</ul>
+
+							<p>
+								There are plenty of reasons why research like this deserves a
+								lot of attention. Firstly, it is an extreme case of
+								understanding the CNN input space. Secondly, it is tremendously
+								effective at hiding adversarial changes as a small number of
+								pixels are altered and hence completely imperceptible to the
+								human eye. This one pixel attack can potentially be extended to
+								domains like Natural Language Processing, Speech Recognition
+								etc.
+							</p>
+
+							<ul>
+								<li>Model Used: <span class="base2">BasicCNN</span></li>
+								<li>Dataset: <span class="base2">CIFAR Sample</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<img
+							src='{% static "images/onepixelattack/base.jpg" %}'
+							class="descriptionImage"
+						/>
+					</div>
+				</div>
+
+				<div class="row center pt-4">
+					<span class="error"
+						>This method is too slow in processing the adversarial image.</span
+					>
+					<div class="col-sm-12">
+						<div class="row pt-4">
+							<div class="col-sm-3">
+								<label for="model2Select">Select an image:</label>
+							</div>
+							<div class="col-sm-9">
+								<select
+									class="form-control"
+									id="model2Select"
+									onchange="fetchOnePixelExample()"
+								>
+									<option value="None"></option>
+									<option value="airplane.jpg">Airplane</option>
+									<option value="automobile.jpg">Automobile</option>
+									<option value="bird.jpg">Bird</option>
+									<option value="cat.jpg">Cat</option>
+									<option value="deer.jpg">Deer</option>
+									<option value="dog.jpg">Dog</option>
+									<option value="frog.jpg">Frog</option>
+									<option value="horse.jpg">Horse</option>
+									<option value="ship.jpg">Ship</option>
+									<option value="truck.jpg">Truck</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4 center">
+						<div class="divTransBox">
+							Image
+							<img class="modelImage" src="" id="model2Image" />
+						</div>
+					</div>
+					<div class="col-sm-4 pt-5">
+						<div class="row center">
+							Select perturbation amount (%): &nbsp
+
+							<br />
+							<div class="col-sm-12">
+								<input
+									type="range"
+									min="1"
+									max="100"
+									value="10"
+									class="slider"
+									id="model2Slider"
+									oninput="showSliderValue(2)"
+								/>
+							</div>
+							<div class="base2" id="model2ShowValue">0</div>
+						</div>
+						<div class="row center pt-5">
+							<button class="btn btn-success" onclick="fetchOnePixelResults()">
+								Fetch
+							</button>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="divWhiteBox">
+							<div class="row center">Results:</div>
+							<div class="row center" id="model2Results"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="divTransBox font4">
+				<div class="row">
+					<div class="col-sm-12 brandSub">Model 3: C&W Attack</div>
+				</div>
+				<div class="row center">
+					<div class="col-sm-5 descriptionSub font2">
+						<div class="row center base2">Description</div>
+						<div class="row text-justify">
+							<p>
+								The Carlini-Wagner attack (2016) is a regularization-based
+								attack with some critical modifications which can resolve the
+								unboundedness issue.<br />
+								Neural networks provide state-of-the-art results for most
+								machine learning tasks. Unfortunately, neural networks are
+								vulnerable to adversarial examples: given an input x and any
+								target classification t, it is possible to find a new input x′
+								that is similar to x but classified as t. This makes it
+								difficult to apply neural networks in security-critical areas.
+								Defensive distillation is a recently proposed approach that can
+								take an arbitrary neural network, and increase its robustness,
+								reducing the success rate of current attacks' ability to find
+								adversarial examples from 95% to 0.5%.
+							</p>
+							<p>
+								CW finds the adversarial instance by finding the smallest noise
+								δ added to an image x that will change the classification to a
+								class t.
+							</p>
+							<ul>
+								<li>Model Used: <span class="base2">InceptionV3</span></li>
+								<li>Dataset: <span class="base2">ImageNet</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<img
+							src='{% static "images/cwattack/base.png" %}'
+							class="descriptionImage"
+						/>
+					</div>
+				</div>
+				<div class="row center pt-4">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-3">
+								<label for="model3Select">Select an image:</label>
+							</div>
+							<div class="col-sm-9">
+								<select
+									class="form-control"
+									id="model3Select"
+									onchange="fetchCWExample()"
+								>
+									<option value="None"></option>
+									<option value="bear.jpg">Bear</option>
+									<option value="bird1.jpg">Jacamar</option>
+									<option value="blackrhino.jpg">Black Rhino</option>
+									<option value="bmwcar.jpg">BMW Car</option>
+									<option value="chevroletcar.jpg">Chevrolet Car</option>
+									<option value="cobra.jpg">Indian Cobra</option>
+									<option value="dog.jpg">Dog</option>
+									<option value="elephant.jpg">Indian Elephant</option>
+									<option value="elephant2.jpg">African Elephant</option>
+									<option value="goldfish.jpg">Goldfish</option>
+									<option value="house.jpg">House</option>
+									<option value="house2.jpg">Bungalow</option>
+									<option value="lebanonsnake.jpg">Lebanon Snake</option>
+									<option value="lion1.jpg">Lion</option>
+									<option value="lion2.jpg">Lion cub</option>
+									<option value="panda.jpg">Panda</option>
+									<option value="panda2.jpg">Panda 2</option>
+									<option value="panda3.jpg">Panda 3</option>
+									<option value="parrot.jpg">Parrot</option>
+									<option value="stopsign.jpg">Stop Sign</option>
+									<option value="stopsign2.jpg">Stop Sign 2</option>
+									<option value="whitebear.jpg">Polar Bear</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4 center">
+						<div class="divTransBox">
+							Image
+							<img class="modelImage" src="" id="model3Image" />
+						</div>
+					</div>
+					<div class="col-sm-4 pt-5">
+						<div class="row center">
+							Select Number of Iterations : &nbsp
+
+							<br />
+							<div class="col-sm-12">
+								<input
+									type="range"
+									min="1"
+									max="20"
+									value="1"
+									class="slider"
+									id="model3Slider"
+									oninput="showSliderValue(3)"
+								/>
+							</div>
+							<div class="base2" id="model3ShowValue">0</div>
+						</div>
+						<div class="row center pt-5">
+							<button class="btn btn-success" onclick="fetchCWResults()">
+								Fetch
+							</button>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="divWhiteBox">
+							<div class="row center">Results:</div>
+							<div class="row center" id="model3Results"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="divTransBox font4">
+				<div class="row">
+					<div class="col-sm-12 brandSub">Model 4: Basic Iterative Attack</div>
+				</div>
+				<div class="row center">
+					<div class="col-sm-5 descriptionSub font2">
+						<div class="row center base2">Description</div>
+						<div class="row text-justify">
+							<p>
+								An exten- sion of FGSM, referred to as the Basic Iterative
+								Method (BIM), repeatedly adds small perturbations and allows
+								targeted attacks. Moosavi-Dezfooli et al. linearize the
+								classifier and compute smaller perturbations that result in
+								untargeted attacks. We rely on BIM as the method of choice for
+								attacks based on images, because it allows robust targeted
+								attacks with results that are classified with arbitrarily high
+								certainty, even though it is easy to implement and efficient to
+								execute. Its drawbacks are the aforementioned visible artifacts.
+							</p>
+							<br />
+							<p>
+								It ensures targeted attacks are visually imperceptible, based on
+								the observation that attacks do not need to be applied
+								homogeneously across the input image and that humans struggle to
+								notice artifacts in image regions of high local complexity. Such
+								attacks, in particular, do not change saccades as severely as
+								generic attacks, and so humans perceive the original image and
+								the modified one as very similar
+							</p>
+							<ul>
+								<li>Model Used: <span class="base2">ResNet18</span></li>
+								<li>Dataset: <span class="base2">ImageNet</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<img
+							src='{% static "images/biattack/base.png" %}'
+							class="descriptionImage"
+						/>
+					</div>
+				</div>
+				<div class="row center pt-4">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-3">
+								<label for="model4Select">Select an image:</label>
+							</div>
+							<div class="col-sm-9">
+								<select
+									class="form-control"
+									id="model4Select"
+									onchange="fetchBIExample()"
+								>
+									<option value="None"></option>
+									<option value="bear.jpg">Bear</option>
+									<option value="bird1.jpg">Jacamar</option>
+									<option value="blackrhino.jpg">Black Rhino</option>
+									<option value="bmwcar.jpg">BMW Car</option>
+									<option value="chevroletcar.jpg">Chevrolet Car</option>
+									<option value="cobra.jpg">Indian Cobra</option>
+									<option value="dog.jpg">Dog</option>
+									<option value="elephant.jpg">Indian Elephant</option>
+									<option value="elephant2.jpg">African Elephant</option>
+									<option value="goldfish.jpg">Goldfish</option>
+									<option value="house.jpg">House</option>
+									<option value="house2.jpg">Bungalow</option>
+									<option value="lebanonsnake.jpg">Lebanon Snake</option>
+									<option value="lion1.jpg">Lion</option>
+									<option value="lion2.jpg">Lion cub</option>
+									<option value="panda.jpg">Panda</option>
+									<option value="panda2.jpg">Panda 2</option>
+									<option value="panda3.jpg">Panda 3</option>
+									<option value="parrot.jpg">Parrot</option>
+									<option value="stopsign.jpg">Stop Sign</option>
+									<option value="stopsign2.jpg">Stop Sign 2</option>
+									<option value="whitebear.jpg">Polar Bear</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4 center">
+						<div class="divTransBox">
+							Image
+							<img class="modelImage" src="" id="model4Image" />
+						</div>
+					</div>
+					<div class="col-sm-4 pt-5">
+						<div class="row center">
+							Select perturbation amount (%): &nbsp
+
+							<br />
+							<div class="col-sm-12">
+								<input
+									type="range"
+									min="1"
+									max="100"
+									value="10"
+									class="slider"
+									id="model41Slider"
+									oninput="showSliderValue(41)"
+								/>
+							</div>
+							<div class="base2" id="model41ShowValue">0</div>
+						</div>
+						<div class="row center">
+							Select Number of Iterations amount : &nbsp
+
+							<br />
+							<div class="col-sm-12">
+								<input
+									type="range"
+									min="1"
+									max="10"
+									value="5"
+									class="slider"
+									id="model42Slider"
+									oninput="showSliderValue(42)"
+								/>
+							</div>
+							<div class="base2" id="model42ShowValue">0</div>
+						</div>
+						<div class="row center pt-5">
+							<button class="btn btn-success" onclick="fetchBIResults()">
+								Fetch
+							</button>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="divWhiteBox">
+							<div class="row center">Results:</div>
+							<div class="row center" id="model4Results"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4 center">
+						<div class="divTransBox">
+							Perturbation Added
+							<img class="modelImage" src="" id="model4Perturbation" />
+						</div>
+					</div>
+					<div class="col-sm-4 center">
+						<div class="divTransBox">
+							Adversarial Image Generated
+							<img class="modelImage" src="" id="model4Adversarial" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> -->
+		</section>
+		<section class="back3" id="footer">
+			<div class="row font2 base1 center pt-4">
+				<div class="col-sm-8">
+					This project is attempted as a part of the final year major subject
+					study conducted by the below mentioned students under the <br />Dept.
+					of Computer Science and Information Technology, JIIT.<br />
+					Jaypee Institute of Information Technology, Noida
+					<br />
+					Semester: EVEN2020<br />
+					Group: 98
+				</div>
+			</div>
+			<div class="row font2 base1">
+				<div class="col-sm-6 p-5">
+					<div class="row highlight3">Submitted By:</div>
+					<div class="row">
+						<ul>
+							<li>17103067 &nbsp&nbsp&nbsp Piyush Gupta</li>
+							<li>17103103 &nbsp&nbsp&nbsp Chitrank Mishra</li>
+							<li>17103279 &nbsp&nbsp&nbsp Dharmesh Pratap Singh</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-6 p-5">
+					<div class="row highlight3">Mentored By:</div>
+					<div class="row">
+						<ul>
+							Dr. Sangeeta Mittal
+							<br />
+							Department of Computer Science and Information Technology, JIIT
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+	<script>
+		initialize();
+	</script>
+</html>
